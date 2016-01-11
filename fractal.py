@@ -1,0 +1,118 @@
+from lsystem import *
+
+def OI (iters, l = 10, color = (0, 0, 0)):
+    a = L_system ()
+    a.setAngle (60)
+    a.setLen (l)
+    a.setColor (color)
+    a.setAxiom ("AX++AX++AX")
+    a.addRule ("A", "F-F++F--F+F")
+    a.addRule ("X", "X++AX--AX--AX++AX")
+    a.eval (iters)
+    a.draw (200, 200)
+    a.clearRules ()
+
+def sierpinskiTriangle (iters, l = 10, color = (0, 0, 0)):
+    a = L_system ()
+    a.setAngle (120)
+    a.setLen (l)
+    a.setColor (color)
+    a.setAxiom ("F+F+F")
+    a.addRule ("F", "F+F-F-F+F")
+    a.eval (iters)
+    a.draw (200, 200)
+    a.clearRules ()
+
+def kochSnowflake (iters, l = 5, color = (0, 0, 0)):
+    a = L_system ()
+    a.setAngle (60)
+    a.setLen (l)
+    a.setColor (color)
+    a.setAxiom ("F++F++F")
+    a.addRule ("F", "F-F++F-F")
+    a.eval (iters)
+    a.draw (500, 500)
+    a.clearRules ()
+
+def spiral (iters, l = 10, color = (0, 255, 255)):
+    a = L_system ()
+    a.setAngle (15)
+    a.setLen (l)
+    a.setColor (color)
+    a.setAxiom ("AAAA")
+    a.addRule ("A", "X+X+X+X+X+X+")
+    a.addRule ("X", "[F+F+F+F[---X-Y]+++++F++++++++F-F-F-F]")
+    a.addRule ("Y", "[F+F+F+F[---Y]+++++F++++++++F-F-F-F]")
+    a.eval (iters)
+    a.draw (500, 500)
+    a.clearRules ()
+
+def hilbertCurve (iters, l = 10, color = (0, 0, 0)):
+    a = L_system ()
+    a.setAngle (90)
+    a.setLen (l)
+    a.setColor (color)
+    a.setAxiom ("X")
+    a.addRule ("X", "-YF+XFX+FY-")
+    a.addRule ("Y", "+XF-YFY-FX+")
+    a.eval (iters)
+    a.draw (300, 700)
+    a.clearRules ()
+
+def heighwayDragon (iters, l = 3, color = (0, 0, 0)):
+    a = L_system ()
+    a.setAngle (90)
+    a.setLen (l)
+    a.setColor (color)
+    a.setAxiom ("FX")
+    a.addRule ("X", "X+YF+")
+    a.addRule ("Y", "-FX-Y")
+    a.eval (iters)
+    a.draw (500, 500)
+    a.clearRules ()
+
+def gosperCurve (iters, l = 5, color = (0, 0, 0)):
+    a = L_system ()
+    a.setAngle (60)
+    a.setLen (l)
+    a.setColor (color)
+    a.setAxiom ("X")
+    a.addRule ("X", "X+YF++YF-FX--FXFX-YF+")
+    a.addRule ("Y", "-FX+YFYF++YF+FX--FX-Y")
+    a.eval (iters)
+    a.draw (500, 500)
+    a.clearRules ()
+
+def pentadendryt (iters, l = 3, color = (121, 173, 123)):
+    a = L_system ()
+    a.setAngle (72)
+    a.setLen (l)
+    a.setColor (color)
+    a.setAxiom ("F")
+    a.addRule ("F", "F+F-F--F+F+F")
+    a.eval (iters)
+    a.draw (100, 800)
+    a.clearRules ()
+
+def tree1 (iters, l = 5, color = (121, 173, 123)):
+    a = L_system ()
+    a.setAngle (25.7)
+    a.setLen (l)
+    a.setColor (color)
+    a.setAxiom ("---F")
+    a.addRule ("F", "F[+F]F[-F]F")
+    a.eval (iters)
+    a.draw (500, 800)
+    a.clearRules ()
+
+def tree2 (iters, l = 5, color = (121, 173, 123)):
+    a = L_system ()
+    a.setAngle (22.5)
+    a.setLen (l)
+    a.setColor (color)
+    a.setAxiom ("----F")
+    a.addRule ("F", "FF+[+F-F-F]-[-F+F+F]")
+    a.eval (iters)
+    a.draw (500, 800)
+    a.clearRules ()
+
